@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { appointmentApi } from './api/appointmentApi';
 import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={appointmentApi}>
-      <App />
-    </ApiProvider>
+    <ErrorBoundary>
+      <ApiProvider api={appointmentApi}>
+        <App />
+      </ApiProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
