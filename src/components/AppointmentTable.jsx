@@ -24,7 +24,7 @@ export const AppointmentTable = ({ appointments }) => {
           </tr>
         </thead>
         <tbody>
-          {appointments.map(({ patient_name, appointment_date, appointment_time, doctor, injury, mobile_number }, idx) => (
+          {appointments?.map(({ patient_name, appointment_date, appointment_time, doctor, injury, mobile_number }, idx) => (
             <tr key={idx} className='p-6 border-b border-gray-200'>
               <td className='table-cell px-4 py-2'>
                 <div className='flex'>

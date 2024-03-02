@@ -7,10 +7,10 @@ import { Loader } from './components/Loader';
 import { AppointmentTable } from './components/AppointmentTable';
 
 function App() {
-  const { data, isError, isFetching, isSuccess } = useGetAppointmentListQuery();
+  const getAppointmentListQuery = useGetAppointmentListQuery();
   return (
     <>
-      {match({ isError, isFetching, isSuccess })
+      {match(getAppointmentListQuery)
         .with({ isError: true }, () => (
           <div className='w-screen h-screen flex justify-center items-center'>
             <h3>Something went wrong, Please try later.</h3>
@@ -21,7 +21,7 @@ function App() {
             <Loader />
           </div>
         ))
-        .with({ isSuccess: true }, () => <AppointmentTable appointments={data.appointments} />)
+        .with({ isSuccess: true }, () => <AppointmentTable appointments={getAppointmentListQuery.data.appointments} />)
         .otherwise(() => (
           <>Something unexpected happened. Please contact admin.</>
         ))}
