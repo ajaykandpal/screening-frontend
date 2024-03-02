@@ -11,7 +11,7 @@ const TableColumns = ['Patients', 'Date', 'Time', 'Doctor', 'Injury', 'Action'];
 
 export const AppointmentTable = ({ appointments }) => {
   return (
-    <div className='w-screen h-screen p-6'>
+    <div className='w-screen h-screen p-7'>
       <h1 className='text-xl font-bold text-gray-700 mb-4'>Today's Appointment List</h1>
       <table className='w-full border-spacing-3 text-left text-small text-gray-700'>
         <thead className='bg-gray-100'>
